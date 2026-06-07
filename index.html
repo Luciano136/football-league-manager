@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabla de Fútbol</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <h1>Registro de Partidos</h1>
+
+  <!-- FORMULARIO DE PARTIDOS -->
+  <div class="form">
+
+    <input type="text" id="homeTeam" placeholder="Equipo local">
+    <input type="number" id="homeGoals" placeholder="Goles local">
+
+    <input type="text" id="awayTeam" placeholder="Equipo visitante">
+    <input type="number" id="awayGoals" placeholder="Goles visitante">
+
+    <input type="text" id="stadium" placeholder="Estadio">
+
+    <button onclick="addMatch()">Agregar partido</button>
+
+  </div>
+
+  <hr>
+
+  <!-- ESTADIOS -->
+  <h2>Estadios</h2>
+
+  <button onclick="renderStadiumView()">Ver estadios</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Estadio</th>
+        <th>Partidos</th>
+        <th>Goles</th>
+        <th>Equipos</th>
+      </tr>
+    </thead>
+    <tbody id="stadiums-table"></tbody>
+  </table>
+
+  <hr>
+
+  <!-- TABLA DE POSICIONES -->
+  <h2>Tabla de posiciones</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Equipo</th>
+        <th>Partidos</th>
+        <th>Ganados</th>
+        <th>Empatados</th>
+        <th>Perdidos</th>
+        <th>Goles a favor</th>
+        <th>Goles en contra</th>
+        <th>Puntos</th>
+      </tr>
+    </thead>
+    <tbody id="standings"></tbody>
+  </table>
+
+  <!-- MODAL -->
+  <div id="overlay" class="overlay hidden" onclick="closePanel()">
+
+    <div id="team-panel" class="panel" onclick="event.stopPropagation()">
+
+      <h2 id="panel-title"></h2>
+
+      <div id="panel-stats"></div>
+
+      <ul id="players-list"></ul>
+
+      <!-- Sección jugadores (solo visible en equipos) -->
+      <div id="player-section">
+
+        <h3>Jugadores</h3>
+
+        <div class="form">
+          <input type="text" id="player-name" placeholder="Nombre">
+          <input type="number" id="player-age" placeholder="Edad">
+          <input type="number" id="player-height" step="0.01" placeholder="Altura">
+          <input type="number" id="player-salary" placeholder="Sueldo">
+        </div>
+
+        <button onclick="addPlayer()">Agregar jugador</button>
+
+      </div>
+
+      <button onclick="closePanel()">Cerrar</button>
+
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="script/teams.js"></script>
+  <script src="script/matches.js"></script>
+  <script src="script/players.js"></script>
+  <script src="script/ui.js"></script>
+  <script src="script/app.js"></script>
+
+</body>
+</html>
