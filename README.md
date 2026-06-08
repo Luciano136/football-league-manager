@@ -95,7 +95,3 @@ This project was built as a practice exercise to improve:
 - Improve UI/UX styling
 
 ---
-
-## 👨‍💻 Author
-
-Luciano
